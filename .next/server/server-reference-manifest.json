@@ -1,0 +1,83 @@
+{
+  "node": {
+    "7f412ae9f0c6a86bce5ef65465bd006d0f7de85252": {
+      "workers": {
+        "app/(grid)/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CSaaS%5C%5Cgaming-plat%5C%5Capp%5C%5Cactions%5C%5Cauth.ts%22%2C%5B%7B%22id%22%3A%227f412ae9f0c6a86bce5ef65465bd006d0f7de85252%22%2C%22exportedName%22%3A%22getUser%22%7D%2C%7B%22id%22%3A%227f5221eb6c7220e2a51875e96a2851175933753a43%22%2C%22exportedName%22%3A%22login%22%7D%2C%7B%22id%22%3A%227f7de64cbd2fd135318cbb2a0db189de010fade06d%22%2C%22exportedName%22%3A%22signup%22%7D%2C%7B%22id%22%3A%227fb1fb3bc6d0f9ad0662dd363dea7206b42ad984a5%22%2C%22exportedName%22%3A%22logout%22%7D%2C%7B%22id%22%3A%227fe6bda188d88f6f5bb71bba69b077aa7bf972d6eb%22%2C%22exportedName%22%3A%22protect%22%7D%5D%5D%2C%5B%22D%3A%5C%5CSaaS%5C%5Cgaming-plat%5C%5Capp%5C%5Cactions%5C%5Cactions.ts%22%2C%5B%7B%22id%22%3A%227f55c7ba898ed6a6a88e78c82ca00b02fcafddc8a6%22%2C%22exportedName%22%3A%22addToWishList%22%7D%2C%7B%22id%22%3A%227f82ba4d271473a177404798f225d566e5baacec74%22%2C%22exportedName%22%3A%22removeFromWishList%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(grid)/page": "action-browser"
+      }
+    },
+    "7f5221eb6c7220e2a51875e96a2851175933753a43": {
+      "workers": {
+        "app/(grid)/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CSaaS%5C%5Cgaming-plat%5C%5Capp%5C%5Cactions%5C%5Cauth.ts%22%2C%5B%7B%22id%22%3A%227f412ae9f0c6a86bce5ef65465bd006d0f7de85252%22%2C%22exportedName%22%3A%22getUser%22%7D%2C%7B%22id%22%3A%227f5221eb6c7220e2a51875e96a2851175933753a43%22%2C%22exportedName%22%3A%22login%22%7D%2C%7B%22id%22%3A%227f7de64cbd2fd135318cbb2a0db189de010fade06d%22%2C%22exportedName%22%3A%22signup%22%7D%2C%7B%22id%22%3A%227fb1fb3bc6d0f9ad0662dd363dea7206b42ad984a5%22%2C%22exportedName%22%3A%22logout%22%7D%2C%7B%22id%22%3A%227fe6bda188d88f6f5bb71bba69b077aa7bf972d6eb%22%2C%22exportedName%22%3A%22protect%22%7D%5D%5D%2C%5B%22D%3A%5C%5CSaaS%5C%5Cgaming-plat%5C%5Capp%5C%5Cactions%5C%5Cactions.ts%22%2C%5B%7B%22id%22%3A%227f55c7ba898ed6a6a88e78c82ca00b02fcafddc8a6%22%2C%22exportedName%22%3A%22addToWishList%22%7D%2C%7B%22id%22%3A%227f82ba4d271473a177404798f225d566e5baacec74%22%2C%22exportedName%22%3A%22removeFromWishList%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(grid)/page": "action-browser"
+      }
+    },
+    "7f7de64cbd2fd135318cbb2a0db189de010fade06d": {
+      "workers": {
+        "app/(grid)/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CSaaS%5C%5Cgaming-plat%5C%5Capp%5C%5Cactions%5C%5Cauth.ts%22%2C%5B%7B%22id%22%3A%227f412ae9f0c6a86bce5ef65465bd006d0f7de85252%22%2C%22exportedName%22%3A%22getUser%22%7D%2C%7B%22id%22%3A%227f5221eb6c7220e2a51875e96a2851175933753a43%22%2C%22exportedName%22%3A%22login%22%7D%2C%7B%22id%22%3A%227f7de64cbd2fd135318cbb2a0db189de010fade06d%22%2C%22exportedName%22%3A%22signup%22%7D%2C%7B%22id%22%3A%227fb1fb3bc6d0f9ad0662dd363dea7206b42ad984a5%22%2C%22exportedName%22%3A%22logout%22%7D%2C%7B%22id%22%3A%227fe6bda188d88f6f5bb71bba69b077aa7bf972d6eb%22%2C%22exportedName%22%3A%22protect%22%7D%5D%5D%2C%5B%22D%3A%5C%5CSaaS%5C%5Cgaming-plat%5C%5Capp%5C%5Cactions%5C%5Cactions.ts%22%2C%5B%7B%22id%22%3A%227f55c7ba898ed6a6a88e78c82ca00b02fcafddc8a6%22%2C%22exportedName%22%3A%22addToWishList%22%7D%2C%7B%22id%22%3A%227f82ba4d271473a177404798f225d566e5baacec74%22%2C%22exportedName%22%3A%22removeFromWishList%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(grid)/page": "action-browser"
+      }
+    },
+    "7fb1fb3bc6d0f9ad0662dd363dea7206b42ad984a5": {
+      "workers": {
+        "app/(grid)/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CSaaS%5C%5Cgaming-plat%5C%5Capp%5C%5Cactions%5C%5Cauth.ts%22%2C%5B%7B%22id%22%3A%227f412ae9f0c6a86bce5ef65465bd006d0f7de85252%22%2C%22exportedName%22%3A%22getUser%22%7D%2C%7B%22id%22%3A%227f5221eb6c7220e2a51875e96a2851175933753a43%22%2C%22exportedName%22%3A%22login%22%7D%2C%7B%22id%22%3A%227f7de64cbd2fd135318cbb2a0db189de010fade06d%22%2C%22exportedName%22%3A%22signup%22%7D%2C%7B%22id%22%3A%227fb1fb3bc6d0f9ad0662dd363dea7206b42ad984a5%22%2C%22exportedName%22%3A%22logout%22%7D%2C%7B%22id%22%3A%227fe6bda188d88f6f5bb71bba69b077aa7bf972d6eb%22%2C%22exportedName%22%3A%22protect%22%7D%5D%5D%2C%5B%22D%3A%5C%5CSaaS%5C%5Cgaming-plat%5C%5Capp%5C%5Cactions%5C%5Cactions.ts%22%2C%5B%7B%22id%22%3A%227f55c7ba898ed6a6a88e78c82ca00b02fcafddc8a6%22%2C%22exportedName%22%3A%22addToWishList%22%7D%2C%7B%22id%22%3A%227f82ba4d271473a177404798f225d566e5baacec74%22%2C%22exportedName%22%3A%22removeFromWishList%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(grid)/page": "action-browser"
+      }
+    },
+    "7fe6bda188d88f6f5bb71bba69b077aa7bf972d6eb": {
+      "workers": {
+        "app/(grid)/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CSaaS%5C%5Cgaming-plat%5C%5Capp%5C%5Cactions%5C%5Cauth.ts%22%2C%5B%7B%22id%22%3A%227f412ae9f0c6a86bce5ef65465bd006d0f7de85252%22%2C%22exportedName%22%3A%22getUser%22%7D%2C%7B%22id%22%3A%227f5221eb6c7220e2a51875e96a2851175933753a43%22%2C%22exportedName%22%3A%22login%22%7D%2C%7B%22id%22%3A%227f7de64cbd2fd135318cbb2a0db189de010fade06d%22%2C%22exportedName%22%3A%22signup%22%7D%2C%7B%22id%22%3A%227fb1fb3bc6d0f9ad0662dd363dea7206b42ad984a5%22%2C%22exportedName%22%3A%22logout%22%7D%2C%7B%22id%22%3A%227fe6bda188d88f6f5bb71bba69b077aa7bf972d6eb%22%2C%22exportedName%22%3A%22protect%22%7D%5D%5D%2C%5B%22D%3A%5C%5CSaaS%5C%5Cgaming-plat%5C%5Capp%5C%5Cactions%5C%5Cactions.ts%22%2C%5B%7B%22id%22%3A%227f55c7ba898ed6a6a88e78c82ca00b02fcafddc8a6%22%2C%22exportedName%22%3A%22addToWishList%22%7D%2C%7B%22id%22%3A%227f82ba4d271473a177404798f225d566e5baacec74%22%2C%22exportedName%22%3A%22removeFromWishList%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(grid)/page": "action-browser"
+      }
+    },
+    "7f55c7ba898ed6a6a88e78c82ca00b02fcafddc8a6": {
+      "workers": {
+        "app/(grid)/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CSaaS%5C%5Cgaming-plat%5C%5Capp%5C%5Cactions%5C%5Cauth.ts%22%2C%5B%7B%22id%22%3A%227f412ae9f0c6a86bce5ef65465bd006d0f7de85252%22%2C%22exportedName%22%3A%22getUser%22%7D%2C%7B%22id%22%3A%227f5221eb6c7220e2a51875e96a2851175933753a43%22%2C%22exportedName%22%3A%22login%22%7D%2C%7B%22id%22%3A%227f7de64cbd2fd135318cbb2a0db189de010fade06d%22%2C%22exportedName%22%3A%22signup%22%7D%2C%7B%22id%22%3A%227fb1fb3bc6d0f9ad0662dd363dea7206b42ad984a5%22%2C%22exportedName%22%3A%22logout%22%7D%2C%7B%22id%22%3A%227fe6bda188d88f6f5bb71bba69b077aa7bf972d6eb%22%2C%22exportedName%22%3A%22protect%22%7D%5D%5D%2C%5B%22D%3A%5C%5CSaaS%5C%5Cgaming-plat%5C%5Capp%5C%5Cactions%5C%5Cactions.ts%22%2C%5B%7B%22id%22%3A%227f55c7ba898ed6a6a88e78c82ca00b02fcafddc8a6%22%2C%22exportedName%22%3A%22addToWishList%22%7D%2C%7B%22id%22%3A%227f82ba4d271473a177404798f225d566e5baacec74%22%2C%22exportedName%22%3A%22removeFromWishList%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(grid)/page": "action-browser"
+      }
+    },
+    "7f82ba4d271473a177404798f225d566e5baacec74": {
+      "workers": {
+        "app/(grid)/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CSaaS%5C%5Cgaming-plat%5C%5Capp%5C%5Cactions%5C%5Cauth.ts%22%2C%5B%7B%22id%22%3A%227f412ae9f0c6a86bce5ef65465bd006d0f7de85252%22%2C%22exportedName%22%3A%22getUser%22%7D%2C%7B%22id%22%3A%227f5221eb6c7220e2a51875e96a2851175933753a43%22%2C%22exportedName%22%3A%22login%22%7D%2C%7B%22id%22%3A%227f7de64cbd2fd135318cbb2a0db189de010fade06d%22%2C%22exportedName%22%3A%22signup%22%7D%2C%7B%22id%22%3A%227fb1fb3bc6d0f9ad0662dd363dea7206b42ad984a5%22%2C%22exportedName%22%3A%22logout%22%7D%2C%7B%22id%22%3A%227fe6bda188d88f6f5bb71bba69b077aa7bf972d6eb%22%2C%22exportedName%22%3A%22protect%22%7D%5D%5D%2C%5B%22D%3A%5C%5CSaaS%5C%5Cgaming-plat%5C%5Capp%5C%5Cactions%5C%5Cactions.ts%22%2C%5B%7B%22id%22%3A%227f55c7ba898ed6a6a88e78c82ca00b02fcafddc8a6%22%2C%22exportedName%22%3A%22addToWishList%22%7D%2C%7B%22id%22%3A%227f82ba4d271473a177404798f225d566e5baacec74%22%2C%22exportedName%22%3A%22removeFromWishList%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(grid)/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "e04CVqaTnqQ34n3AEJOXWF5SI+uTAEoBfR/sjJvywTg="
+}
