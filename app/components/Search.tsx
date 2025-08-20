@@ -13,14 +13,17 @@ const Search = () => {
   const [search, setSearch] = useState("");
   const { games, isLoading } = useGetGames({ query: search, isDisabled: search === "" });
   const [active, setActive] = useState(false);
-  const outsideREF = useRef(null);
+  const outsideREF = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    window.addEventListener("click", (e) => {
+    const handler = (e: MouseEvent) => {
       console.log(e.target, outsideREF.current);
-      if (outsideREF.current && !outsideREF.current.contains(e.target)) {
+      const target = e.target as Node;
+      if (outsideREF.current && target && !outsideREF.current.contains(target)) {
         setActive(false);
       }
-    });
+    };
+    window.addEventListener("click", handler);
+    return () => window.removeEventListener("click", handler);
   });
   useEffect(() => {
     const t = setTimeout(() => {
@@ -49,7 +52,7 @@ const Search = () => {
             setSearch("");
           }}
         />
-        <SearchIcon className="w-5 h-5 cursor-pointer  duration-150 group-hover:text-rose-400" />
+        <SearchIcon className="w-5 h-5 cursor-pointer  duration-150 group-hover:text-emerald-400" />
       </div>
       <AnimatePresence>
         {(games?.data || isLoading) && active && (
@@ -69,8 +72,8 @@ const Search = () => {
                 </div>
               ))
             ) : games?.data.results.length > 0 ? (
-              games?.data.results.map((game: any) => (
-                <div key={game.id} className="hover:bg-rose-600 duration-200 flex flex-col gap-2 px-4 py-2">
+              games?.data.results.map((game: Game) => (
+                <div key={game.id} className="hover:bg-emerald-600 duration-200 flex flex-col gap-2 px-4 py-2">
                   <Link href={`/game/${game.id}`} className="flex gap-3 items-start w-full h-full">
                     <div className="rounded-2xl relative overflow-hidden w-[40%] bg-neutral-900 h-20">
                       <Image className="object-cover" src={game.background_image || "/"} alt={game.name} fill />
@@ -80,7 +83,7 @@ const Search = () => {
                 </div>
               ))
             ) : (
-              <p className="text-center text-white py-4">No games found with "{search}" query</p>
+              <p className="text-center text-white py-4">No games found with &quot;{search}&quot; query</p>
             )}
           </MotionItem>
         )}

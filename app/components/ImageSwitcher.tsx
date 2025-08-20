@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 
 import { motion } from "framer-motion";
 import { GoPeople } from "react-icons/go";
-const ImageSwitcher = ({ images, game }: { images: any[]; game: Game }) => {
+const ImageSwitcher = ({ images, game }: { images: Screenshot[]; game: Game }) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   useEffect(() => {
     const t = setInterval(() => {
@@ -30,7 +30,7 @@ const ImageSwitcher = ({ images, game }: { images: any[]; game: Game }) => {
             className=" absolute inset-0"
             style={{ zIndex: activeIndex === index ? 1 : 0 }}
           >
-            <Image fill src={image.image} alt={`${image}`} className=" object-cover" />
+            <Image fill src={image.image} alt={`${game.name}-screenshot-${index}`} className=" object-cover" />
           </motion.div>
         ))}
       </div>

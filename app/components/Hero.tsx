@@ -1,5 +1,5 @@
 import React from "react";
-import MaxWidthWrapper from "./defaults/MaxWidthWrapper";
+
 import SwiperCards from "./SwiperCards";
 import "swiper/css";
 import Image from "next/image";
@@ -64,7 +64,7 @@ const Hero = () => {
                   fill
                 />
                 <CardInfo
-                  btnClasses=" text-gray-900"
+                  btnClasses=" text-white"
                   desc="A legendary series has returned. Reach new levels of power in Dragon Ball: Sparking! Zero, out now on PS5"
                   title="Shake the earth. Break the universe !"
                   image="/Dragon-Ball-Sparking-Zero-logo-01-03oct24.webp"

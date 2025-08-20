@@ -9,19 +9,19 @@ const GamesSlider = ({
   games,
   title,
   slidesPerView,
-  big,screenBig
+  big,
 }: {
   games: Game[];
   title: string;
   slidesPerView?: number;
-  big?: boolean;screenBig?:boolean
+  big?: boolean;
 }) => {
   return (
     <div>
       <div className=" flex flex-col gap-6 mt-14">
         <div className=" w-full justify-between flex items-center">
           <Heading text={title} />
-          <Link className=" text-rose-300 font-semibold" href="/category">
+          <Link className=" text-emerald-300 font-semibold" href="/category">
             {" "}
             Browse All Games
           </Link>
@@ -31,6 +31,7 @@ const GamesSlider = ({
           slidesPerView={slidesPerView || 4}
           items={games.map((game: Game) => {
             return {
+              key: game.id,
               card: big ? (
                 <div className=" flex  overflow-hidden items-center bg-main rounded-2xl">
                   <div className=" flex w-[60%] px-6  flex-col items-start ">
@@ -52,7 +53,7 @@ const GamesSlider = ({
                 <div className=" relative cursor-pointer group">
                   <div
                     className="  after:absolute after:inset-0 
-                 after:w-0 group-hover:after:w-full after:h-full after:bg-rose-500/60 after:rounded-2xl after:duration-200  w-full h-96 rounded-2xl overflow-hidden relative "
+                                   after:w-0 group-hover:after:w-full after:h-full after:bg-emerald-500/60 after:rounded-2xl after:duration-200  w-full h-96 rounded-2xl overflow-hidden relative "
                   >
                     <Image
                       className=" group-hover:scale-125 group-hover:rotate-6 duration-200 object-cover"

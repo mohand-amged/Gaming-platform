@@ -1,8 +1,7 @@
 import React from "react";
 import Login from "../components/forms/Login";
-import { getUser } from "../actions/auth";
 
-const page = async () => {
+const Page = async () => {
   return (
     <main
       className=" min-h-screen flex items-center justify-center w-full"
@@ -18,4 +17,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Page;

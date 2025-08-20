@@ -10,7 +10,7 @@ export const searchGames = async function (
 ) {
   const data = await fetchFn(
     `${APIURL}games?search=${query}&page_size=${page_size}&page=${page}&${filters
-      ?.map((filter: any) => `${filter.filterName}=${filter.option}&`)
+      ?.map((filter) => `${filter.filterName}=${filter.option}&`)
       .join("")}&key=${KEY}`,
     cache
   );
@@ -38,5 +38,21 @@ export const gamebyplatforms = async function (id: string, page = 1, page_size =
 };
 export const getGamesByIds = async function (ids: string[]) {
   const data = await Promise.all(ids.map((id) => getGame(id)));
+  return data;
+};
+
+// New API functions for categories
+export const getGenres = async function () {
+  const data = await fetchFn(`${APIURL}genres?key=${KEY}`);
+  return data;
+};
+
+export const getGenreById = async function (id: string) {
+  const data = await fetchFn(`${APIURL}genres/${id}?key=${KEY}`);
+  return data;
+};
+
+export const getGamesByGenre = async function (genreId: string, page = 1, page_size = 20) {
+  const data = await fetchFn(`${APIURL}games?genres=${genreId}&page_size=${page_size}&page=${page}&key=${KEY}`);
   return data;
 };

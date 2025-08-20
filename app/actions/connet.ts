@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
-let cached = (global as any).mongoose || { conn: null, promise: null };
+const cached: { conn: typeof mongoose | null; promise: Promise<typeof mongoose> | null } =
+  (global as unknown as { mongoose?: { conn: typeof mongoose | null; promise: Promise<typeof mongoose> | null } })
+    .mongoose || { conn: null, promise: null };
 const connect = async () => {
   if (cached.conn) return cached.conn;
   cached.promise =

@@ -23,14 +23,14 @@ const ButtonGame = ({
     <button
       disabled={disabled}
       onClick={() => {
-        onClick && onClick();
+        onClick?.();
       }}
       className={`${
         className || ""
-      } hover:text-rose-400 duration-150 min-w-[100px] relative px-6 flex-initial gap-2 py-2 text-center m-auto`}
+      } text-white hover:text-emerald-400 duration-150 min-w-[100px] relative px-6 flex-initial gap-2 py-2 text-center m-auto`}
     >
       {ButtonSvg(false)}
-      <span className=" relative"> {disabled ? <Spinner/> : link ? <Link href={link}>{text}</Link> : text}</span>
+      <span className=" relative"> {disabled ? <Spinner /> : link ? <Link href={link}>{text}</Link> : text}</span>
       {icon && icon}
     </button>
   );

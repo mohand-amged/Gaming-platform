@@ -28,7 +28,7 @@ export const useGetGames = ({
   query?: string;
   page?: number;
   pageSize?: number;
-  filters?: { filterName: string; option: string }[] | any;
+  filters?: { filterName: string; option: string }[];
   isDisabled?: boolean;
 }) => {
   // search query ""  i am disabled when there is not query to search

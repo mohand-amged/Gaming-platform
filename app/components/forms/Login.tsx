@@ -12,7 +12,7 @@ import Logo from "../defaults/Logo";
 import Link from "next/link";
 import { login } from "@/app/actions/auth";
 import { toast } from "react-toastify";
-import { redirect } from "next/navigation";
+
 
 const loginSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email" }),
@@ -31,12 +31,19 @@ const Login = () => {
   const onSubmit = (data: z.infer<typeof loginSchema>) => {
     console.log(data);
     startTransition(async () => {
-      const res = await login(data);
-      console.log(res);
-      if (res.success) {
-        toast.success(res.success);
-        redirect("/");
-      } else toast.error(res.error);
+      try {
+        const res = await login(data);
+        console.log(res);
+        if (res.success) {
+          toast.success(res.success);
+          window.location.href = "/";
+        } else {
+          toast.error(res.error);
+        }
+      } catch (error) {
+        console.error("Login error:", error);
+        toast.error("Login failed. Please try again.");
+      }
     });
   };
   return (
@@ -58,7 +65,7 @@ const Login = () => {
         </Form>
         <div className="capitalize text-base font-semibold flex items-center gap-2">
           <p className=" text-gray-50 ">Do not have an account ?!</p>{" "}
-          <Link className=" text-rose-500 hover:underline" href={"/signup"}>
+          <Link className=" text-emerald-500 hover:underline" href={"/signup"}>
             Register With Us Now !
           </Link>
         </div>

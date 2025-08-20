@@ -33,7 +33,7 @@ export const FileUpload = ({ onChange }: { onChange?: (files: File[]) => void })
 
   const handleFileChange = (newFiles: File[]) => {
     setFiles((prevFiles) => [...prevFiles, ...newFiles]);
-    onChange && onChange(newFiles);
+    onChange?.(newFiles);
   }; //everytime i choose files i set the state to it
   //onCHnage is an optionl fn that i can pass if i want to set form data ex
   const handleRemoveFile = (index: number) => {

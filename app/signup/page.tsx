@@ -1,7 +1,7 @@
 import React from "react";
 import Singup from "../components/forms/Singup";
 
-const page = () => {
+const Page = () => {
   return (
     <main
       className=" min-h-screen flex items-center justify-center w-full"
@@ -17,4 +17,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

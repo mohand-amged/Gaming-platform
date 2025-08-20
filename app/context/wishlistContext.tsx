@@ -29,7 +29,7 @@ export const WishlistProvider = ({ children }: { children: ReactNode }) => {
   const wishlist = user?.data ? user.data.wishlist : wishlistLocal;
   const handleAddToWishlist = async (gameId: string) => {
     if (!mount) return null;
-    const isInWishList = wishlist.some((wish: any) => wish.toString() === gameId);
+    const isInWishList = wishlist.some((wish: string | number) => wish.toString() === gameId);
     if (user?.data) {
       const res = isInWishList ? await removeFromWishList(gameId) : await addToWishList(gameId);
       if (res.success) {

@@ -5,20 +5,21 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 const JWT_EXPIRES = 90 * 60;
-const generateToken = async ({ id }: { id: any }) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET!!, {
+const generateToken = async ({ id }: { id: string }) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET!, {
     expiresIn: JWT_EXPIRES,
   });
 };
-export const signup = async (data: any) => {
+type SignupPayload = { email: string; password: string; name: string; avatar?: unknown };
+export const signup = async (data: SignupPayload) => {
   try {
     await connect();
     const hashedPassword = await bcrypt.hash(data.password, 10);
-    const user = await User.create({ ...data, password: hashedPassword });
+    await User.create({ ...data, password: hashedPassword });
     return { success: "User created successfully" };
-  } catch (error: any) {
+  } catch (error) {
     console.error(error);
-    return { error: "User creation failed", details: error.message };
+    return { error: "User creation failed" };
   }
 };
 export const login = async (data: { email: string; password: string }) => {
@@ -47,9 +48,9 @@ export const login = async (data: { email: string; password: string }) => {
     });
 
     return { success: "Login successful", data: userObj };
-  } catch (error: any) {
+  } catch (error) {
     console.log(error);
-    return { error: "Login failed", details: error.message };
+    return { error: "Login failed" };
   }
 };
 // review game update
@@ -57,20 +58,19 @@ export const protect = async () => {
   const cookie = await cookies();
   const token = cookie.get("token")?.value;
   if (!token) return { error: "you are not authorized to preform this action"! };
-  let decode;
-  decode = jwt.verify(token, process.env.JWT_SECRET!!);
+  const decode = jwt.verify(token, process.env.JWT_SECRET!);
   if (!decode) return { error: "you are not authorized to preform this action"! };
   return { decode };
 };
 export const getUser = async () => {
   try {
-    connect();
+    await connect();
     const { decode } = await protect();
-    const user = await User.findById((decode as any).id);
+    const user = await User.findById((decode as { id: string }).id);
     if (!user) return { error: "you are not authorized to preform this action"! };
     const userObj = JSON.parse(JSON.stringify(user));
     return { data: userObj };
-  } catch (error) {
+  } catch {
     return { error: "you are not authorized to preform this action"! };
   }
 };
@@ -78,7 +78,7 @@ export const logout = async () => {
   try {
     (await cookies()).delete("token");
     return { success: "Logout successful" };
-  } catch (error) {
+  } catch {
     return { error: "Logout failed" };
   }
 };

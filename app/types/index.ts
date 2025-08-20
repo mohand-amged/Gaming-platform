@@ -1,4 +1,4 @@
-interface Game {
+export interface Game {
   id: number;
   slug: string;
   name: string;
@@ -17,7 +17,7 @@ interface Game {
   playtime: number;
   suggestions_count: number;
   updated: string;
-  user_game: any | null;
+  user_game: unknown | null;
   reviews_count: number;
   saturated_color: string;
   dominant_color: string;

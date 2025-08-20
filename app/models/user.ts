@@ -14,6 +14,9 @@ const userSchema = new Schema({
   topTenList: [{ type: String, max: 10 }],
   gamesRating: [{ type: Schema.Types.ObjectId, ref: "GameReview" }],
   bio: { type: String, max: 500, default: "No bio" },
+  friends: [{ type: Schema.Types.ObjectId, ref: "User" }],
+  friendRequests: [{ type: Schema.Types.ObjectId, ref: "User" }],
+  sentFriendRequests: [{ type: Schema.Types.ObjectId, ref: "User" }],
   createdAt: { type: Date, default: Date.now },
 });
 

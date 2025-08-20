@@ -1,4 +1,8 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/(grid)/page": "app/(grid)/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/(grid)/category/page": "app/(grid)/category/page.js",
+  "/(grid)/friends/page": "app/(grid)/friends/page.js",
+  "/(grid)/wishlist/page": "app/(grid)/wishlist/page.js",
+  "/(grid)/page": "app/(grid)/page.js",
+  "/(grid)/games/page": "app/(grid)/games/page.js"
 }

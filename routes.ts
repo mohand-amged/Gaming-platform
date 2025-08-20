@@ -1,2 +1,2 @@
-export const ProtectedRoutes = ["/my-profile"];
+export const ProtectedRoutes = ["/my-profile", "/friends"];
 export const authRoutes = ["/login", "/signup"];

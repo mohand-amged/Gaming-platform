@@ -1,5 +1,5 @@
 "use client";
-import React, { startTransition, useTransition } from "react";
+import React, { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -13,7 +13,7 @@ import Link from "next/link";
 import { FileUploadDemo } from "../FileUpload";
 import { signup } from "@/app/actions/auth";
 import { toast } from "react-toastify";
-import { redirect } from "next/navigation";
+
 
 const singupSchema = z
   .object({
@@ -41,21 +41,23 @@ const Singup = () => {
   const [isPending, startTransition] = useTransition();
   const onSubmit = async (data: z.infer<typeof singupSchema>) => {
     startTransition(async () => {
-      if (data.avatar) {
-        const formData = new FormData();
-        formData.append("file", data.avatar[0]);
-        formData.append("upload_preset", "ml_default");
-        try {
+      try {
+        // Handle avatar upload if provided
+        if (data.avatar && data.avatar[0]) {
+          const formData = new FormData();
+          formData.append("file", data.avatar[0]);
+          formData.append("upload_preset", "ml_default");
+          
           const res = await fetch(process.env.NEXT_PUBLIC_CLOUDINARY_URL!, {
             method: "POST",
             body: formData,
           });
 
-          console.log(res);
           if (!res.ok) {
-            const errorResponse = await res.json(); // Show Cloudinary error details
+            const errorResponse = await res.json();
             console.error("Cloudinary Error:", errorResponse);
-            throw new Error("Failed to upload photo");
+            toast.error("Failed to upload photo");
+            return;
           }
 
           const cloudinaryData = await res.json();
@@ -63,17 +65,23 @@ const Singup = () => {
             secure_url: cloudinaryData.secure_url,
             public_id: cloudinaryData.public_id,
           };
-        } catch (error) {
-          console.error("Photo upload failed:", error);
-          return;
+        } else {
+          // Remove avatar if not provided
+          delete data.avatar;
         }
+
         const response = await signup(data);
         console.log(response);
+        
         if (response?.success) {
           toast.success(response.success);
-          redirect('/login')
+          window.location.href = '/login';
+        } else {
+          toast.error(response.error);
         }
-        else toast.error(response.error);
+      } catch (error) {
+        console.error("Signup error:", error);
+        toast.error("Signup failed. Please try again.");
       }
     });
   };
@@ -99,7 +107,7 @@ const Singup = () => {
         </Form>
         <div className="capitalize text-base font-semibold flex items-center gap-2">
           <p className="  text-gray-50 ">Already Have An Account ?!</p>{" "}
-          <Link className=" text-rose-500 hover:underline" href={"/login"}>
+          <Link className=" text-emerald-500 hover:underline" href={"/login"}>
             Login In to Your Account
           </Link>
         </div>

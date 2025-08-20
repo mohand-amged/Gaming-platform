@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 
 export function FileUploadDemo({ name }: { name: string }) {
-  const [files, setFiles] = useState<File[]>([]);
+  const [, setFiles] = useState<File[]>([]);
   const form = useFormContext();
   const handleFileUpload = (files: File[]) => {
     setFiles(files);

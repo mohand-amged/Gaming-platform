@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { ReactElement, ReactNode, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type SwiperType from "swiper";
@@ -12,12 +12,12 @@ const SwiperCards = ({
   className,
   slidesPerView,
 }: {
-  items: any[];
+  items: { card: React.ReactNode; src?: string }[];
   paginationImages?: boolean;
   className?: string;
   slidesPerView?: number;
 }) => {
-  const [swiper, setSwiper] = useState<SwiperType | null>();
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const [progress, setProgress] = useState(0); //initial value for progress
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const SwiperCards = ({
         slidesPerView={slidesPerView || 1}
         className={` w-full relative ${className || " h-96"}`}
         onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => setSwiper(swiper)}
+        onSwiper={(s) => setSwiper(s)}
       >
         {items.map(({ card }, i) => (
           <SwiperSlide key={i}>{card}</SwiperSlide>
@@ -57,7 +57,7 @@ const SwiperCards = ({
               }}
               key={i}
               className={`${
-                swiper?.realIndex === i && " shadow-md  -translate-y-5 border-rose-500 border opacity-90"
+                swiper?.realIndex === i && " shadow-md  -translate-y-5 border-emerald-500 border opacity-90"
               } cursor-pointer hover:-translate-y-5 z-10  hover:shadow-md hover:opacity-90 duration-200 rounded-xl overflow-hidden max-w-lg w-full h-40 relative`}
             >
               {swiper?.realIndex === i && swiper.autoplay.running && (

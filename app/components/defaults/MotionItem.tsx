@@ -12,10 +12,10 @@ const MotionItem = ({
 }: {
   children: React.ReactNode;
   className?: string;
-  initial?: any;
-  animate?: any;
-  whileInView?: any;
-  exit?: any;
+  initial?: Parameters<typeof motion.div>[0]["initial"];
+  animate?: Parameters<typeof motion.div>[0]["animate"];
+  whileInView?: Parameters<typeof motion.div>[0]["whileInView"];
+  exit?: Parameters<typeof motion.div>[0]["exit"];
 }) => {
   return (
     <motion.div

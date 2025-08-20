@@ -5,8 +5,6 @@ import {
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
 } from "@/components/ui/pagination";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -45,14 +43,14 @@ export function PaginationCustom({
         <PaginationItem>
           <Button
             disabled={page === 1}
-            className={`${page === count ? " bg-rose-400" : ""}   flex items-center gap-2`}
+            className={`${page === count ? " bg-emerald-400" : ""}   flex items-center gap-2`}
             onClick={handlePrev}
           >
             <ArrowLeft className="mr-1" /> Prev
           </Button>
         </PaginationItem>
-        <PaginationItem className={`${page === count ? " bg-rose-400" : ""}`}>
-          <PaginationLink onClick={() => setPage(1)} className={`${page === 1 ? " bg-rose-400" : ""}`}>
+        <PaginationItem className={`${page === count ? " bg-emerald-400" : ""}`}>
+          <PaginationLink onClick={() => setPage(1)} className={`${page === 1 ? " bg-emerald-400" : ""}`}>
             1
           </PaginationLink>
         </PaginationItem>
@@ -65,7 +63,7 @@ export function PaginationCustom({
 
         {getVisiblePages().map((p) => (
           <PaginationItem key={p}>
-            <PaginationLink onClick={() => setPage(p)} className={`${page === p ? " bg-rose-400" : ""}`}>
+            <PaginationLink onClick={() => setPage(p)} className={`${page === p ? " bg-emerald-400" : ""}`}>
               {p}
             </PaginationLink>
           </PaginationItem>
@@ -78,8 +76,8 @@ export function PaginationCustom({
         )}
 
         {count > 1 && page < count && (
-          <PaginationItem className={`${page === count ? " bg-rose-400" : ""}`}>
-            <PaginationLink onClick={() => setPage(count)} className={`${page === count ? " bg-rose-400" : ""}`}>
+          <PaginationItem className={`${page === count ? " bg-emerald-400" : ""}`}>
+            <PaginationLink onClick={() => setPage(count)} className={`${page === count ? " bg-emerald-400" : ""}`}>
               {count}
             </PaginationLink>
           </PaginationItem>
@@ -88,7 +86,7 @@ export function PaginationCustom({
         <PaginationItem>
           <Button
             disabled={page === count}
-            className={`${page === count ? " bg-rose-400" : ""} flex items-center gap-2`}
+            className={`${page === count ? " bg-emerald-400" : ""} flex items-center gap-2`}
             onClick={handleNext}
           >
             Next <ArrowRight className="mr-1" />

@@ -8,7 +8,7 @@ import { useWishlsit } from "@/app/context/wishlistContext";
 import { useGetGamesWithIds } from "@/lib/queryFunctions";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   const { wishlist } = useWishlsit();
   const { games, isLoading } = useGetGamesWithIds(wishlist);
   console.log(games);
@@ -19,7 +19,7 @@ const page = () => {
         {isLoading ? (
           <GameSkeleton />
         ) : games?.length > 0 ? (
-          games?.map((game: any, i) => (
+          games?.map((game: { data: Game; screenshots: { results: Screenshot[] } }, i) => (
             <GameCard
               key={i}
               wishlist={true}
@@ -41,4 +41,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

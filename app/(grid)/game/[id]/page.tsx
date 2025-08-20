@@ -8,7 +8,7 @@ const page = async ({ params }: { params: { id: string } }) => {
   const { id } = await params;
   const game = await getGame(id);
   console.log(game);
-  const { screenshots, data, similar }: { screenshots: any[]; data: Game; similar: any[] } = game;
+  const { screenshots, data, similar }: { screenshots: { results: Screenshot[] }; data: Game; similar: { results: Game[] } } = game;
   console.log(data.ratings);
   return (
     <div className=" mt-10">
