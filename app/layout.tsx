@@ -7,8 +7,8 @@ import { ToastContainer } from "react-toastify";
 import QueryProvider from "@/lib/QueryProvider";
 
 export const metadata: Metadata = {
-  title: "Gaming Hub",
-  description: "this is a gaming website ",
+  title: "Games Hub",
+  description: "this is a gaming platform reviews",
 };
 
 export default function RootLayout({

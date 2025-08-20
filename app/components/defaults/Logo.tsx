@@ -4,8 +4,8 @@ import React from "react";
 const Logo = () => {
   return (
     <Link className=" font-semibold  my-2 text-xl lg:text-2xl  flex gap-2" href={"/"}>
-      <h1 className="text-emerald-600">Gaming</h1>
-      <span>Boi</span>
+      <h1 className="text-emerald-600">Games</h1>
+      <span>Hub</span>
     </Link>
   );
 };
