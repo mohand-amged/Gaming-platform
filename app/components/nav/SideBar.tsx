@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { FaHeart } from "react-icons/fa";
 import { GoHomeFill } from "react-icons/go";
@@ -13,6 +13,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { logout } from "@/app/actions/auth";
 import { toast } from "react-toastify";
 import { useQueryClient } from "@tanstack/react-query";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 export const NAV_LINKS = [
   {
@@ -32,7 +34,7 @@ export const NAV_LINKS = [
   },
   {
     link: "/wishlist",
-    label: "WIshlist",
+    label: "Wishlist",
     icon: <FaHeart />,
   },
   {
@@ -42,12 +44,14 @@ export const NAV_LINKS = [
   },
 ];
 
+
 const SideBar = () => {
   const { user, isLoading } = useGetUser();
   const queryClient = useQueryClient();
+
   return (
-    <div className=" col-span-2">
-      <div className=" py-5 px-10   h-screen sticky inset-0 flex flex-col items-start bg-black/30 text-gray-50">
+    <div className="hidden md:block col-span-2">
+      <div className="py-5 px-10 h-screen sticky inset-0 flex flex-col items-start bg-black/30 text-gray-50">
         <Logo />
         {NAV_LINKS.map((navLink, i: number) => (
           <NavLink key={i} navLink={navLink} />
@@ -58,7 +62,7 @@ const SideBar = () => {
             <Skeleton className="h-4 w-[100px]" />
           </div>
         ) : user?.data ? (
-          <div className="  mt-auto">
+          <div className="mt-auto">
             <NavLink
               navLink={{
                 link: "/settings",
@@ -74,7 +78,7 @@ const SideBar = () => {
                   queryClient.invalidateQueries({ queryKey: ["user"] });
                 } else toast.error(res.error);
               }}
-              variant={"destructive"}
+              variant="destructive"
             >
               Logout
             </Button>

@@ -7,6 +7,7 @@ import MotionItem from "./defaults/MotionItem";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import Image from "next/image";
+import { Game } from "../types";
 
 const Search = () => {
   const [query, setQuery] = useState("");

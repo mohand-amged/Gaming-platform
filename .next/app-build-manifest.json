@@ -21,21 +21,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(grid)/category/page.js"
-    ],
-    "/(grid)/games/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(grid)/games/page.js"
-    ],
-    "/(grid)/wishlist/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(grid)/wishlist/page.js"
-    ],
-    "/(grid)/friends/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(grid)/friends/page.js"
     ]
   }
 }
